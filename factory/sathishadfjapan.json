@@ -1,0 +1,9 @@
+{
+	"name": "sathishadfjapan",
+	"location": "japaneast",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "4d1abe53-0741-44fa-926e-dafdc60468f2",
+		"tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+	}
+}
