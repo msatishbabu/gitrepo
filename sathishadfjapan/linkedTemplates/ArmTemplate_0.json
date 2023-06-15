@@ -1,0 +1,720 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "sathishadfjapan"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"default_properties_date_value": {
+			"type": "string",
+			"defaultValue": "20230514"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://teststorageaus.dfs.core.windows.net/"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/default')]",
+			"type": "Microsoft.DataFactory/factories/globalparameters",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"date": {
+					"type": "string",
+					"value": "[parameters('default_properties_date_value')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorage1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "testfilesystem"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "partitionkey",
+						"type": "String"
+					},
+					{
+						"name": "id",
+						"type": "String"
+					},
+					{
+						"name": "revision",
+						"type": "String"
+					},
+					{
+						"name": "isdeleted",
+						"type": "String"
+					},
+					{
+						"name": "lastupdateuserid",
+						"type": "String"
+					},
+					{
+						"name": "lastupdateusernamejp",
+						"type": "String"
+					},
+					{
+						"name": "lastupdateusernameen",
+						"type": "String"
+					},
+					{
+						"name": "lastupdatecompanyid",
+						"type": "String"
+					},
+					{
+						"name": "lastupdatecompanynamejp",
+						"type": "String"
+					},
+					{
+						"name": "lastupdatecompanynameen",
+						"type": "String"
+					},
+					{
+						"name": "lastupdategroupcompanycode",
+						"type": "String"
+					},
+					{
+						"name": "lastupdatedepartmentid",
+						"type": "String"
+					},
+					{
+						"name": "lastupdatedepartmentnamejp",
+						"type": "String"
+					},
+					{
+						"name": "lastupdatedepartmentnameen",
+						"type": "String"
+					},
+					{
+						"name": "lastupdatedate",
+						"type": "String"
+					},
+					{
+						"name": "ticketmanagementid",
+						"type": "String"
+					},
+					{
+						"name": "parentid",
+						"type": "String"
+					},
+					{
+						"name": "status",
+						"type": "String"
+					},
+					{
+						"name": "no",
+						"type": "String"
+					},
+					{
+						"name": "isphase",
+						"type": "String"
+					},
+					{
+						"name": "title",
+						"type": "String"
+					},
+					{
+						"name": "ticketstatusid",
+						"type": "String"
+					},
+					{
+						"name": "detail",
+						"type": "String"
+					},
+					{
+						"name": "targetdate",
+						"type": "String"
+					},
+					{
+						"name": "plannedstartdate",
+						"type": "String"
+					},
+					{
+						"name": "plannedenddate",
+						"type": "String"
+					},
+					{
+						"name": "actualstartdate",
+						"type": "String"
+					},
+					{
+						"name": "actualenddate",
+						"type": "String"
+					},
+					{
+						"name": "plannedmanhours",
+						"type": "String"
+					},
+					{
+						"name": "actualmanhours",
+						"type": "String"
+					},
+					{
+						"name": "requesterid",
+						"type": "String"
+					},
+					{
+						"name": "requesternamejp",
+						"type": "String"
+					},
+					{
+						"name": "requesternameen",
+						"type": "String"
+					},
+					{
+						"name": "requestercompanyid",
+						"type": "String"
+					},
+					{
+						"name": "requestercompanynamejp",
+						"type": "String"
+					},
+					{
+						"name": "requestercompanynameen",
+						"type": "String"
+					},
+					{
+						"name": "requestergroupcompanycode",
+						"type": "String"
+					},
+					{
+						"name": "requesterdepartmentid",
+						"type": "String"
+					},
+					{
+						"name": "requesterdepartmentnamejp",
+						"type": "String"
+					},
+					{
+						"name": "requesterdepartmentnameen",
+						"type": "String"
+					},
+					{
+						"name": "requestermailaddress",
+						"type": "String"
+					},
+					{
+						"name": "personinchargeid",
+						"type": "String"
+					},
+					{
+						"name": "personinchargenamejp",
+						"type": "String"
+					},
+					{
+						"name": "personinchargenameen",
+						"type": "String"
+					},
+					{
+						"name": "companyinchargeid",
+						"type": "String"
+					},
+					{
+						"name": "companyinchargenamejp",
+						"type": "String"
+					},
+					{
+						"name": "companyinchargenameen",
+						"type": "String"
+					},
+					{
+						"name": "companyinchargegroupcompanycode",
+						"type": "String"
+					},
+					{
+						"name": "departmentinchargeid",
+						"type": "String"
+					},
+					{
+						"name": "departmentinchargenamejp",
+						"type": "String"
+					},
+					{
+						"name": "departmentinchargenameen",
+						"type": "String"
+					},
+					{
+						"name": "personinchargemailaddress",
+						"type": "String"
+					},
+					{
+						"name": "result",
+						"type": "String"
+					},
+					{
+						"name": "orderno",
+						"type": "String"
+					},
+					{
+						"name": "alertstatus",
+						"type": "String"
+					},
+					{
+						"name": "firstplannedstartdate",
+						"type": "String"
+					},
+					{
+						"name": "lastplannedenddate",
+						"type": "String"
+					},
+					{
+						"name": "isresultvticketfile",
+						"type": "String"
+					},
+					{
+						"name": "isresultvdocument",
+						"type": "String"
+					},
+					{
+						"name": "iscompletionvdocument",
+						"type": "String"
+					},
+					{
+						"name": "isresultaitop",
+						"type": "String"
+					},
+					{
+						"name": "tickettypeid",
+						"type": "String"
+					},
+					{
+						"name": "fieldvaluecontents",
+						"type": "String"
+					},
+					{
+						"name": "iscustomticket",
+						"type": "String"
+					},
+					{
+						"name": "milestonemarkid",
+						"type": "String"
+					},
+					{
+						"name": "ismilestone",
+						"type": "String"
+					},
+					{
+						"name": "isdisplaydownline",
+						"type": "String"
+					},
+					{
+						"name": "milestonename",
+						"type": "String"
+					},
+					{
+						"name": "senddate",
+						"type": "String"
+					},
+					{
+						"name": "approvalstatus",
+						"type": "String"
+					},
+					{
+						"name": "createuserid",
+						"type": "String"
+					},
+					{
+						"name": "createusernamejp",
+						"type": "String"
+					},
+					{
+						"name": "createusernameen",
+						"type": "String"
+					},
+					{
+						"name": "createusercompanyid",
+						"type": "String"
+					},
+					{
+						"name": "createusercompanynamejp",
+						"type": "String"
+					},
+					{
+						"name": "createusercompanynameen",
+						"type": "String"
+					},
+					{
+						"name": "createusergroupcompanycode",
+						"type": "String"
+					},
+					{
+						"name": "createuserdepartmentid",
+						"type": "String"
+					},
+					{
+						"name": "createuserdepartmentnamejp",
+						"type": "String"
+					},
+					{
+						"name": "createuserdepartmentnameen",
+						"type": "String"
+					},
+					{
+						"name": "ticketmanagementapprovesettingrevision",
+						"type": "String"
+					},
+					{
+						"name": "isapproval",
+						"type": "String"
+					},
+					{
+						"name": "isgroupticket",
+						"type": "String"
+					},
+					{
+						"name": "departmentinchargegroupcompanycode",
+						"type": "String"
+					},
+					{
+						"name": "departmentinchargecompanyid",
+						"type": "String"
+					},
+					{
+						"name": "departmentinchargedepartmentid",
+						"type": "String"
+					},
+					{
+						"name": "departmentinchargedepartmentnamejp",
+						"type": "String"
+					},
+					{
+						"name": "departmentinchargedepartmentnameen",
+						"type": "String"
+					},
+					{
+						"name": "isalert",
+						"type": "String"
+					},
+					{
+						"name": "isinherittag",
+						"type": "String"
+					},
+					{
+						"name": "hasfiles",
+						"type": "String"
+					},
+					{
+						"name": "hasbookmark",
+						"type": "String"
+					},
+					{
+						"name": "approvinggroupid",
+						"type": "String"
+					},
+					{
+						"name": "hierarchy1",
+						"type": "String"
+					},
+					{
+						"name": "hierarchy2",
+						"type": "String"
+					},
+					{
+						"name": "hierarchy3",
+						"type": "String"
+					},
+					{
+						"name": "hierarchy4",
+						"type": "String"
+					},
+					{
+						"name": "hierarchy5",
+						"type": "String"
+					},
+					{
+						"name": "hierarchy6",
+						"type": "String"
+					},
+					{
+						"name": "hierarchy7",
+						"type": "String"
+					},
+					{
+						"name": "hierarchy8",
+						"type": "String"
+					},
+					{
+						"name": "hierarchy9",
+						"type": "String"
+					},
+					{
+						"name": "hierarchy10",
+						"type": "String"
+					},
+					{
+						"name": "hierarchy11",
+						"type": "String"
+					},
+					{
+						"name": "hierarchy12",
+						"type": "String"
+					},
+					{
+						"name": "haschild",
+						"type": "String"
+					},
+					{
+						"name": "search_no",
+						"type": "String"
+					},
+					{
+						"name": "search_title",
+						"type": "String"
+					},
+					{
+						"name": "search_customfieldtext",
+						"type": "String"
+					},
+					{
+						"name": "isusescmlink",
+						"type": "String"
+					},
+					{
+						"name": "customalertid",
+						"type": "String"
+					},
+					{
+						"name": "detailfileworkproductid",
+						"type": "String"
+					},
+					{
+						"name": "resultfileworkproductid",
+						"type": "String"
+					},
+					{
+						"name": "followmailsenddate",
+						"type": "String"
+					},
+					{
+						"name": "followmaildesignateddate",
+						"type": "String"
+					},
+					{
+						"name": "issendsenddatemail",
+						"type": "String"
+					},
+					{
+						"name": "issenddesignateddatemail",
+						"type": "String"
+					},
+					{
+						"name": "issenddeadlinemail",
+						"type": "String"
+					},
+					{
+						"name": "issendexpiredmail",
+						"type": "String"
+					},
+					{
+						"name": "fieldvaluecontentupdatedate",
+						"type": "String"
+					},
+					{
+						"name": "requestdate",
+						"type": "String"
+					},
+					{
+						"name": "issendchildticketcompletemail",
+						"type": "String"
+					},
+					{
+						"name": "istargetdateinterlock",
+						"type": "String"
+					},
+					{
+						"name": "iseveryoneinticketmanagement",
+						"type": "String"
+					},
+					{
+						"name": "isticketlock",
+						"type": "String"
+					},
+					{
+						"name": "isusemanhourlink",
+						"type": "String"
+					},
+					{
+						"name": "milestonecolor",
+						"type": "String"
+					},
+					{
+						"name": "milestonestyle",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "outputfiles"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "sno",
+						"type": "String"
+					},
+					{
+						"name": "name",
+						"type": "String"
+					},
+					{
+						"name": "datetime",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"wildcardFolderPath": {
+										"value": "@pipeline().globalParameters.date",
+										"type": "Expression"
+									},
+									"wildcardFileName": "*",
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobFSWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "DelimitedText1",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DelimitedText2",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/DelimitedText1')]",
+				"[concat(variables('factoryId'), '/datasets/DelimitedText2')]"
+			]
+		}
+	]
+}
