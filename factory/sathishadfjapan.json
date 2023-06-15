@@ -1,5 +1,13 @@
 {
 	"name": "sathishadfjapan",
+	"properties": {
+		"globalParameters": {
+			"date": {
+				"type": "string",
+				"value": "20230514"
+			}
+		}
+	},
 	"location": "japaneast",
 	"identity": {
 		"type": "SystemAssigned",
