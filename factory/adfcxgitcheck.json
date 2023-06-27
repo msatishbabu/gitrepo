@@ -1,5 +1,13 @@
 {
 	"name": "adfcxgitcheck",
+	"properties": {
+		"globalParameters": {
+			"date": {
+				"type": "string",
+				"value": "20230512"
+			}
+		}
+	},
 	"location": "australiaeast",
 	"identity": {
 		"type": "SystemAssigned",
