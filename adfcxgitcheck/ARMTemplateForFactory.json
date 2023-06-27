@@ -14,6 +14,10 @@
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://teststorageaus.dfs.core.windows.net/"
+		},
+		"default_properties_date_value": {
+			"type": "string",
+			"defaultValue": "20230512"
 		}
 	},
 	"variables": {
@@ -737,6 +741,18 @@
 						"type": "SecureString",
 						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
 					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/default')]",
+			"type": "Microsoft.DataFactory/factories/globalparameters",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"date": {
+					"type": "string",
+					"value": "[parameters('default_properties_date_value')]"
 				}
 			},
 			"dependsOn": []

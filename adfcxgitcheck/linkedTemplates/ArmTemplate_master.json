@@ -15,6 +15,10 @@
 			"type": "string",
 			"defaultValue": "https://teststorageaus.dfs.core.windows.net/"
 		},
+		"default_properties_date_value": {
+			"type": "string",
+			"defaultValue": "20230512"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -44,6 +48,9 @@
 					},
 					"AzureDataLakeStorage1_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"default_properties_date_value": {
+						"value": "[parameters('default_properties_date_value')]"
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"

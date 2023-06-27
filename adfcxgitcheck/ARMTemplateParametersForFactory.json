@@ -10,6 +10,9 @@
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://teststorageaus.dfs.core.windows.net/"
+		},
+		"default_properties_date_value": {
+			"value": "20230512"
 		}
 	}
 }
