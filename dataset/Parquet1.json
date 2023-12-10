@@ -1,0 +1,181 @@
+{
+	"name": "Parquet1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "L0-2_DRTLINFHDRWT_20231116T083944Z.parquet",
+				"fileSystem": "pktformat"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "DPRFNEWYMD",
+				"type": "INT96"
+			},
+			{
+				"name": "CSKJ",
+				"type": "UTF8"
+			},
+			{
+				"name": "KYTN_CD",
+				"type": "UTF8"
+			},
+			{
+				"name": "DERNJ",
+				"type": "UTF8"
+			},
+			{
+				"name": "CTYPE",
+				"type": "UTF8"
+			},
+			{
+				"name": "BDATANO",
+				"type": "UTF8"
+			},
+			{
+				"name": "BIDO",
+				"type": "UTF8"
+			},
+			{
+				"name": "BFCTCD",
+				"type": "UTF8"
+			},
+			{
+				"name": "BSPLCD",
+				"type": "UTF8"
+			},
+			{
+				"name": "NSPL",
+				"type": "UTF8"
+			},
+			{
+				"name": "BKBTDSTCD",
+				"type": "UTF8"
+			},
+			{
+				"name": "BDSTCD",
+				"type": "UTF8"
+			},
+			{
+				"name": "NDST",
+				"type": "UTF8"
+			},
+			{
+				"name": "BSHPDLRCD",
+				"type": "UTF8"
+			},
+			{
+				"name": "NSHPDLR",
+				"type": "UTF8"
+			},
+			{
+				"name": "BMCMDLCDF",
+				"type": "UTF8"
+			},
+			{
+				"name": "NMCMDLF",
+				"type": "UTF8"
+			},
+			{
+				"name": "BMCSRLNOF",
+				"type": "UTF8"
+			},
+			{
+				"name": "BEQEGMDLCDF",
+				"type": "UTF8"
+			},
+			{
+				"name": "NEQEGMDLF",
+				"type": "UTF8"
+			},
+			{
+				"name": "BEQEGSRLNOF",
+				"type": "UTF8"
+			},
+			{
+				"name": "BIDN",
+				"type": "UTF8"
+			},
+			{
+				"name": "BMCMDLCDS",
+				"type": "UTF8"
+			},
+			{
+				"name": "NMCMDLS",
+				"type": "UTF8"
+			},
+			{
+				"name": "DRTLDAT",
+				"type": "UTF8"
+			},
+			{
+				"name": "DWARSTDAT",
+				"type": "UTF8"
+			},
+			{
+				"name": "BWARCDNO",
+				"type": "UTF8"
+			},
+			{
+				"name": "BRTLDNP",
+				"type": "UTF8"
+			},
+			{
+				"name": "BSONO",
+				"type": "UTF8"
+			},
+			{
+				"name": "BSOINVNO",
+				"type": "UTF8"
+			},
+			{
+				"name": "NDLRADR",
+				"type": "UTF8"
+			},
+			{
+				"name": "NDLRCTY",
+				"type": "UTF8"
+			},
+			{
+				"name": "NDLRSTT",
+				"type": "UTF8"
+			},
+			{
+				"name": "BDLRZIP",
+				"type": "UTF8"
+			},
+			{
+				"name": "BDLRCNT",
+				"type": "UTF8"
+			},
+			{
+				"name": "DCREDAT",
+				"type": "UTF8"
+			},
+			{
+				"name": "DCRETIM",
+				"type": "UTF8"
+			},
+			{
+				"name": "CITM",
+				"type": "UTF8"
+			},
+			{
+				"name": "CIDN",
+				"type": "UTF8"
+			},
+			{
+				"name": "CLKMSYS",
+				"type": "UTF8"
+			}
+		]
+	}
+}

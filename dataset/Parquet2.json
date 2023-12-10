@@ -1,0 +1,101 @@
+{
+	"name": "Parquet2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_kaiin_master_20231114T062604Z.parquet",
+				"fileSystem": "pktformat"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "顧客番号",
+				"type": "UTF8"
+			},
+			{
+				"name": "CS会社コード",
+				"type": "UTF8"
+			},
+			{
+				"name": "会社名",
+				"type": "UTF8"
+			},
+			{
+				"name": "統合顧客番号",
+				"type": "UTF8"
+			},
+			{
+				"name": "AKTOS顧客番号",
+				"type": "UTF8"
+			},
+			{
+				"name": "申込日",
+				"type": "INT96"
+			},
+			{
+				"name": "入会日",
+				"type": "INT96"
+			},
+			{
+				"name": "保険入会日",
+				"type": "INT96"
+			},
+			{
+				"name": "退会日",
+				"type": "INT96"
+			},
+			{
+				"name": "保険退会日",
+				"type": "INT96"
+			},
+			{
+				"name": "退会理由区分",
+				"type": "UTF8"
+			},
+			{
+				"name": "退会理由区分名（漢字）",
+				"type": "UTF8"
+			},
+			{
+				"name": "退会理由その他",
+				"type": "UTF8"
+			},
+			{
+				"name": "保険退会理由区分",
+				"type": "UTF8"
+			},
+			{
+				"name": "保険退会理由区分名（漢字）",
+				"type": "UTF8"
+			},
+			{
+				"name": "保険退会理由その他（漢字）",
+				"type": "UTF8"
+			},
+			{
+				"name": "カード区分",
+				"type": "UTF8"
+			},
+			{
+				"name": "名義変更前顧客番号",
+				"type": "UTF8"
+			},
+			{
+				"name": "最終更新日",
+				"type": "INT96"
+			},
+			{
+				"name": "最終更新時刻",
+				"type": "INT96"
+			}
+		]
+	}
+}
