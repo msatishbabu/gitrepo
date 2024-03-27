@@ -10,7 +10,7 @@
 			"user": "sathish",
 			"database": "PROD_ANALYTICS",
 			"warehouse": "compute_wh",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5ZmY4NTA5Yy1hMDAxLTQzZmEtODc2ZC0zZWExMzdlNWU3OGMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJjMDI0ZTAyNy0wYTdiLTRhMTEtODM4YS1kNjIxMWY4YWRhYTAiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "Shir",
