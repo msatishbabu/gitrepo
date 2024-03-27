@@ -1,20 +1,27 @@
 {
 	"name": "Snowflake1",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "SnowflakeV2",
 		"typeProperties": {
 			"authenticationType": "KeyPair",
 			"accountIdentifier": "ysyamyw-jz38162",
-			"user": "sathish",
+			"user": "SATHISH",
 			"database": "PROD_ANALYTICS",
 			"warehouse": "compute_wh",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIzYjA4NmVlMC03OWFhLTQwNWYtODBjYi0wMzQ0MGUzZmZmMWUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"privateKey": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "NEWpK"
+			}
 		},
 		"connectVia": {
 			"referenceName": "Shir",
 			"type": "IntegrationRuntimeReference"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
