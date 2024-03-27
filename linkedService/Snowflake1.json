@@ -10,7 +10,10 @@
 			"user": "sathish",
 			"database": "PROD_ANALYTICS",
 			"warehouse": "compute_wh",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJjMDI0ZTAyNy0wYTdiLTRhMTEtODM4YS1kNjIxMWY4YWRhYTAiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"privatekey": {
+				"type": "String",
+				"value": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsBnfiPHrseZxvZmfij5x\ndkLiSpHRI6iNmxmRVpIpYWYLRRO/99NSmPYoUnCKZey0lLKS9Id7dzlILE8Mv9vo\nu1nHNiKumhm3t8M7gbFgvCUCxROYMEIKSg7U5K21P4OQd2oVfeO8Y4gMEk3jRgEY\n3tGJXxQxN2PdVBqGP7K9XLWWkWbZtwHcBJUJa4cxkluvE2AWqPLgOZbZC5w/uitw\nYKIDD9L5kDNuPWia19GxpAg8mz+wMO2Qe2MhR1LeCUtTXiBYA8kSKD+c/p3C/job\nxGOGpP0gHXhXOOwkU+A1p5ec+S3xhVbddgc3HwYVwTF6iDAW0CNjxqoNbCAlONBA\nQIDAQAB\n-----END PUBLIC KEY-----"
+			}
 		},
 		"connectVia": {
 			"referenceName": "Shir",
