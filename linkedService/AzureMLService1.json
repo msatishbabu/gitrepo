@@ -1,0 +1,13 @@
+{
+	"name": "AzureMLService1",
+	"properties": {
+		"annotations": [],
+		"type": "AzureMLService",
+		"typeProperties": {
+			"subscriptionId": "aa758b60-9c4a-47e6-8fb8-54e4fa883655",
+			"resourceGroupName": "sathishai",
+			"mlWorkspaceName": "sathishAIworkspace",
+			"authentication": "MSI"
+		}
+	}
+}
